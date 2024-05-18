@@ -29,8 +29,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./imagelight.jpg)
-![](./imagedark.jpg)
+![](./screenshot/imagelight.png)
+![](./screenshot/imagedark.png)
 
 ### Links
 
