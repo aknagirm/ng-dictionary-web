@@ -38,7 +38,7 @@ Dark Theme:
 ### Links
 
 - [Solution URL](https://github.com/aknagirm/ng-dictionary-web)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Live Site URL](https://aknagirm.github.io/ng-dictionary-web/)
 
 ## My process
 
