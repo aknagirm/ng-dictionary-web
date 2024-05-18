@@ -20,7 +20,7 @@ This is a real world dictionary application, where you can check definition, syn
 Users should be able to:
 
 - Search for words using the input field
-- See the Free Dictionary API's response for the searched word
+- See the response for the searched word
 - See a form validation message when trying to submit a blank form
 - Play the audio file for a word when it's available
 - Switch between serif, sans serif, and monospace fonts
@@ -29,12 +29,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot/imagelight.png)
-![](./screenshot/imagedark.png)
+![Light theme](./screenshot/imagelight.png)
+![Dark Theme](./screenshot/imagedark.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/aknagirm/ng-dictionary-web)
+- [Solution URL](https://github.com/aknagirm/ng-dictionary-web)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
@@ -52,4 +52,5 @@ Managing the dual theme, without material felt little exciting. In this approach
 
 ## Author
 
+- Name: Mriganka Sekhar Sarkar
 - linkedin - [@mriganka-sekhar-sarkar-974814a2](linkedin.com/in/mriganka-sekhar-sarkar-974814a2)
