@@ -28,12 +28,12 @@
               "src/styles.scss",
               {
                 "input": "src/app/themes/css/darkTheme.css",
-                "inject": true,
+                "inject": false,
                 "bundleName": "darkTheme"
               },
               {
                 "input": "src/app/themes/css/lightTheme.css",
-                "inject": true,
+                "inject": false,
                 "bundleName": "lightTheme"
               }
             ],
