@@ -29,8 +29,11 @@ Users should be able to:
 
 ### Screenshot
 
-![Light theme](./screenshot/imagelight.png)
-![Dark Theme](./screenshot/imagedark.png)
+Light theme:
+![](./screenshot/imagelight.png)
+<br>
+Dark Theme:
+![](./screenshot/imagedark.png)
 
 ### Links
 
@@ -48,7 +51,7 @@ Users should be able to:
 
 ### What I enjoyed most
 
-Managing the dual theme, without material felt little exciting. In this approach, I loaded two css variable theme files <b>src\app\themes\css_darkTheme.css</b> & <b>src\app\themes\css_lightTheme.css</b> at the build time of the application. Once the build is completed These two files injected to the html as stylesheet. These files contain variables with same name but different color values, which supposed to be set as :root variables. Once that is done, the <b>src\app\components\slider\slider.component.ts</b> changing any one stylesheet to diasable as selected by the user using the slider.
+Managing the dual theme, without material felt little exciting. In this approach, I loaded two css variable theme files <b>src\app\themes\css_darkTheme.css</b> & <b>src\app\themes\css_lightTheme.css</b> at the build time of the application. Once the build is completed these two files injected to the html as stylesheets. These files contain variables with same name but different color values, which supposed to be set as :root variables. Once that is done, the <b>src\app\components\slider\slider.component.ts</b> changing any one stylesheet to diasable as selected by the user using the slider.
 
 ## Author
 
