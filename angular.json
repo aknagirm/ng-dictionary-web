@@ -27,14 +27,14 @@
             "styles": [
               "src/styles.scss",
               {
-                "input": "src/app/themes/css/_darkTheme.css",
+                "input": "src/app/themes/css/darkTheme.css",
                 "inject": true,
-                "bundleName": "_darkTheme"
+                "bundleName": "darkTheme"
               },
               {
-                "input": "src/app/themes/css/_lightTheme.css",
+                "input": "src/app/themes/css/lightTheme.css",
                 "inject": true,
-                "bundleName": "_lightTheme"
+                "bundleName": "lightTheme"
               }
             ],
             "scripts": []
