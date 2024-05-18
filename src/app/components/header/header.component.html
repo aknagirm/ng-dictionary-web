@@ -1,0 +1,14 @@
+<div class="card-header">
+  <div class="card-header-left">
+    <img src="assets/images/logo.svg" alt="logo" id="logo-icon" />
+  </div>
+  <div class="card-header-right">
+    <select name="font-select" id="font-select" (change)="fontChange($event)">
+      <option value="sans-serif" selected>Sans Serif</option>
+      <option value="serif">Serif</option>
+      <option value="monospace">Monospace</option>
+    </select>
+    <div class="vertical-divider"></div>
+    <app-slider></app-slider>
+  </div>
+</div>

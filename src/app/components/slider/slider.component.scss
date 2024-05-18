@@ -1,0 +1,46 @@
+@import "../../themes/themes";
+
+.theme-icon {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.slider-wrapper {
+  height: 22px;
+  width: 40px;
+  position: relative;
+  margin-right: 15px;
+
+  > input {
+    visibility: none;
+    height: 0;
+    width: 0;
+  }
+
+  .slider {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 22px;
+    background-color: $theme-change-icon-color;
+  }
+
+  .slider::before {
+    display: block;
+    margin: 3px;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background-color: white;
+    transition: 0.4s;
+  }
+
+  > input:checked + .slider::before {
+    transform: translateX(16px);
+  }
+}

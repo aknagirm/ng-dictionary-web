@@ -1,0 +1,39 @@
+@import "../../themes/themes";
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  height: 36px;
+
+  .card-header-right {
+    display: flex;
+
+    #font-select {
+      border: none;
+      background-color: inherit;
+      color: inherit;
+      font-family: inherit;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    #font-select option {
+      border-radius: 0%;
+      background-color: $search-bar;
+      color: inherit;
+    }
+  }
+
+  .theme-icon {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .vertical-divider {
+    border-right: 2px solid $vertical-bar;
+    height: 32px;
+    margin: 0px 10px;
+  }
+}

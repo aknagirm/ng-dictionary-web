@@ -1,0 +1,19 @@
+<div class="card-body">
+  <input
+    [ngClass]="{ 'input-error-border': emptValueError }"
+    type="text"
+    placeholder="type here the word..."
+    id="search-box"
+    (keydown)="enterPressAlert($event, searchInput.value)"
+    #searchInput
+  />
+  <img
+    src="assets/images/icon-search.svg"
+    alt="search Icon"
+    class="search-icon"
+    (click)="searchFortext(searchInput.value)"
+  />
+  <small *ngIf="emptValueError" id="no-word-types-error"
+    >Please type the word</small
+  >
+</div>

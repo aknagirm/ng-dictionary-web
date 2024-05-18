@@ -1,0 +1,105 @@
+@import "../../themes/themes";
+
+.card-footer {
+  .word-syllable-banner {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row;
+
+    .word-syllable-banner-left {
+      h1 {
+        text-transform: capitalize;
+        font-size: 50px;
+        margin: 0;
+      }
+      #word-syllable {
+        color: $syllable;
+        font-size: 24px;
+        font-weight: bold;
+      }
+    }
+  }
+  .word-meaning-banner {
+    .parts-of-speech {
+      display: flex;
+      align-items: center;
+      margin: 25px auto;
+      span {
+        flex: 0 1 10%;
+        font-size: 24px;
+        font-weight: bold;
+        font-style: italic;
+        padding-right: 5px;
+      }
+    }
+
+    .definitions-list {
+      padding-left: 20px;
+      list-style: none;
+      li {
+        position: relative;
+        padding-left: 20px;
+        .example-text {
+          font-size: 18px;
+          font-style: italic;
+        }
+      }
+    }
+
+    .definitions-list li::before {
+      position: absolute;
+      left: 0;
+      content: "";
+      top: 0.5em;
+      transform: translateY(-50%);
+      width: 5px;
+      height: 5px;
+      background-color: $bullet-point;
+      border-radius: 50%;
+    }
+
+    .synonyms-list {
+      :last-child {
+        font-weight: bold;
+        margin-left: 15px;
+        color: $syllable;
+      }
+    }
+  }
+
+  .source-banner {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    a {
+      color: inherit;
+    }
+    a::after {
+      content: url("assets/images/icon-new-window.svg");
+      padding-left: 10px;
+    }
+  }
+}
+
+.static-tag {
+  padding-right: 10px;
+  color: #757575;
+}
+
+.line {
+  flex: 1 0 90%;
+  border-top: 1px $segment-line solid;
+}
+
+.error-card {
+  margin-top: 100px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  #error-title {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: red;
+  }
+}
