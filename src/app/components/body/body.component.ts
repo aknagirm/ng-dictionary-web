@@ -13,9 +13,7 @@ export class BodyComponent {
   constructor(private wordSearchService: WordSearchService) {}
 
   enterPressAlert(event: KeyboardEvent, element: string) {
-    console.log(event);
     this.emptValueError = false;
-    this.wordSearchService.reset();
     if (event.key === 'Enter') {
       this.searchFortext(element);
     }
@@ -26,5 +24,4 @@ export class BodyComponent {
       ? this.wordSearchService.searchFortext(word)
       : (this.emptValueError = true);
   }
-  reset() {}
 }

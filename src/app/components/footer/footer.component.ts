@@ -12,14 +12,17 @@ export class FooterComponent implements OnInit {
   audioLink: string | undefined;
   wordResponse: DictionaryWordObject | undefined;
   errorMessage: { [key: string]: string } | undefined;
+  searchInProgress = false;
 
   constructor(private wordSearchService: WordSearchService) {}
 
   ngOnInit(): void {
+    this.wordSearchService.searchInProgress.subscribe(
+      (searchInProgress) => (this.searchInProgress = searchInProgress)
+    );
     this.wordSearchService.wordResponse.subscribe({
       next: (data) => {
         this.wordResponse = data;
-        console.log(this.wordResponse);
         this.wordResponse?.phonetics.forEach((element) => {
           if (element.audio) {
             this.audioAvailable = true;

@@ -4,7 +4,7 @@
     type="text"
     placeholder="type here the word..."
     id="search-box"
-    (keydown)="enterPressAlert($event, searchInput.value)"
+    (keypress)="enterPressAlert($event, searchInput.value)"
     #searchInput
   />
   <img

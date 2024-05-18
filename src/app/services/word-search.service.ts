@@ -4,12 +4,15 @@ import {
   DictionaryWordObject,
   MeaningObject,
 } from '../models/common.interface';
-import { Subject, map, of } from 'rxjs';
+import { BehaviorSubject, Subject, map, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class WordSearchService {
+  _searchInProgress: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    false
+  );
   _wordResponse: Subject<DictionaryWordObject | undefined> = new Subject<
     DictionaryWordObject | undefined
   >();
@@ -22,7 +25,12 @@ export class WordSearchService {
     return this._wordResponse.asObservable();
   }
 
+  get searchInProgress() {
+    return this._searchInProgress.asObservable();
+  }
+
   searchFortext(word: string) {
+    this._searchInProgress.next(true);
     this.errorData = undefined;
     this.http
       .get<DictionaryWordObject[]>(
@@ -50,16 +58,15 @@ export class WordSearchService {
         })
       )
       .subscribe({
-        next: (response) => this._wordResponse.next(response),
+        next: (response) => {
+          this._wordResponse.next(response);
+          this._searchInProgress.next(false);
+        },
         error: (error: HttpErrorResponse) => {
           console.log(error);
           this.errorData = error.error;
+          this._searchInProgress.next(false);
         },
       });
-  }
-
-  reset() {
-    this.errorData = undefined;
-    this._wordResponse.next(undefined);
   }
 }

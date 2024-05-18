@@ -1,65 +1,76 @@
-<ng-container *ngIf="!erroData; else errorMsg">
-  <div class="card-footer" *ngIf="wordResponse">
-    {{ errorMessage | json }}
-    <div class="word-syllable-banner">
-      <div class="word-syllable-banner-left">
-        <span>
-          <h1 id="word-printed">{{ wordResponse.word }}</h1>
-        </span>
-        <span id="word-syllable">{{ wordResponse.phonetic }}</span>
-      </div>
-      <div
-        class="word-syllable-banner-right"
-        *ngIf="audioAvailable"
-        (click)="playAudio()"
-      >
-        <img
-          src="assets/images/icon-play.svg"
-          alt="play button"
-          height="55px"
-        />
-      </div>
-    </div>
-    <div class="word-meaning-banner">
-      <ng-container *ngFor="let meaning of wordResponse.meanings">
-        <div class="parts-of-speech">
-          <span>{{ meaning.partOfSpeech }}</span>
-          <hr class="line" />
+<ng-container *ngIf="!searchInProgress; else searchingTemplate">
+  <ng-container *ngIf="!erroData; else errorMsg">
+    <div class="card-footer" *ngIf="wordResponse">
+      {{ errorMessage | json }}
+      <div class="word-syllable-banner">
+        <div class="word-syllable-banner-left">
+          <span>
+            <h1 id="word-printed">{{ wordResponse.word }}</h1>
+          </span>
+          <span id="word-syllable">{{ wordResponse.phonetic }}</span>
         </div>
-        <span class="static-tag">Meaning</span>
-        <ul class="definitions-list">
-          <ng-container *ngFor="let def of meaning.definitions">
-            <li>
-              <span>{{ def.definition }}</span>
+        <div
+          class="word-syllable-banner-right"
+          *ngIf="audioAvailable"
+          (click)="playAudio()"
+        >
+          <img
+            src="assets/images/icon-play.svg"
+            alt="play button"
+            height="55px"
+          />
+        </div>
+      </div>
+      <div class="word-meaning-banner">
+        <ng-container *ngFor="let meaning of wordResponse.meanings">
+          <div class="parts-of-speech">
+            <span>{{ meaning.partOfSpeech }}</span>
+            <hr class="line" />
+          </div>
+          <span class="static-tag">Meaning</span>
+          <ul class="definitions-list">
+            <ng-container *ngFor="let def of meaning.definitions">
+              <li>
+                <span>{{ def.definition }}</span>
+                <br />
+                <span *ngIf="def.example" class="example-text static-tag"
+                  >"{{ def.example }}"</span
+                >
+              </li>
               <br />
-              <span *ngIf="def.example" class="example-text static-tag"
-                >"{{ def.example }}"</span
-              >
-            </li>
-            <br />
-          </ng-container>
-        </ul>
-        <div class="synonyms-list" *ngIf="meaning.synonyms.length">
-          <span id="static-tag">Synonyms</span>
-          <span>{{ meaning.synonyms.join(", ") }}</span>
-        </div>
-      </ng-container>
+            </ng-container>
+          </ul>
+          <div class="synonyms-list" *ngIf="meaning.synonyms.length">
+            <span id="static-tag">Synonyms</span>
+            <span>{{ meaning.synonyms.join(", ") }}</span>
+          </div>
+        </ng-container>
+      </div>
+      <hr class="line" />
+      <div class="source-banner">
+        <small class="static-tag">Source</small>
+        <small
+          ><a href="https://en.wiktionary.org/wiki/keyboard" target="_blank"
+            >https://en.wiktionary.org/wiki/keyboard</a
+          ></small
+        >
+      </div>
     </div>
-    <hr class="line" />
-    <div class="source-banner">
-      <small class="static-tag">Source</small>
-      <small
-        ><a href="https://en.wiktionary.org/wiki/keyboard" target="_blank"
-          >https://en.wiktionary.org/wiki/keyboard</a
-        ></small
-      >
-    </div>
-  </div>
+  </ng-container>
 </ng-container>
+
 <ng-template #errorMsg>
   <div class="error-card">
-    <span id="error-title">{{ erroData!["title"] }}</span>
+    <span id="error-title">{{
+      erroData!["title"] ? erroData!["title"] : "Something went wrong"
+    }}</span>
     <br />
-    <span>{{ erroData!["message"] }}</span>
+    <span>{{
+      erroData!["message"] ? erroData!["message"] : "Please try after sometime"
+    }}</span>
   </div>
 </ng-template>
+
+<ng-template #searchingTemplate>
+  <div class="error-card">Search In Progress...</div></ng-template
+>
