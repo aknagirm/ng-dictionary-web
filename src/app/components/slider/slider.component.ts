@@ -20,26 +20,24 @@ export class SliderComponent implements OnInit {
   constructor(private renderer: Renderer2) {}
 
   ngOnInit(): void {
-    const linkEl = document.getElementsByTagName('link');
-    for (const el of Array.from(linkEl)) {
-      if (el.href.includes('lightTheme')) {
-        this.lightThemeEl = el;
-      } else if (el.href.includes('darkTheme')) {
-        this.darkThemeEl = el;
-      }
-    }
     this.changeTheme();
   }
 
   changeTheme() {
+    const el = document.getElementById('theme-css');
+    if (el) {
+      this.renderer.removeChild(document.head, el);
+    }
+    let stylesheetElement = this.renderer.createElement('link');
+    stylesheetElement.rel = 'stylesheet';
+    stylesheetElement.id = 'theme-css';
     if (this.currentTheme === 'dark') {
       this.currentTheme = 'light';
-      this.renderer.removeAttribute(this.lightThemeEl, 'disabled');
-      this.renderer.setAttribute(this.darkThemeEl, 'disabled', 'true');
+      stylesheetElement.href = 'assets/css/lightTheme.css';
     } else {
       this.currentTheme = 'dark';
-      this.renderer.removeAttribute(this.darkThemeEl, 'disabled');
-      this.renderer.setAttribute(this.lightThemeEl, 'disabled', 'true');
+      stylesheetElement.href = 'assets/css/darkTheme.css';
     }
+    this.renderer.appendChild(document.head, stylesheetElement);
   }
 }
