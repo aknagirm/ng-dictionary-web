@@ -1,27 +1,55 @@
-# NgDictionaryWeb
+# Dictionary web app solution
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.6.
+This is a real world dictionary application, where you can check definition, synonyms, pronounciations, phonetic audio, parts of speeches etc of any word. This application is dual theme application and supports Serif, Sans-Serif, and Monospace fonts as per user's choice. This application is created based on Angular 14.
 
-## Development server
+## Table of contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I enjoyed most](#what-i-enjoyed-most)
+- [Author](#author)
 
-## Code scaffolding
+## Overview
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### The challenge
 
-## Build
+Users should be able to:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Search for words using the input field
+- See the Free Dictionary API's response for the searched word
+- See a form validation message when trying to submit a blank form
+- Play the audio file for a word when it's available
+- Switch between serif, sans serif, and monospace fonts
+- Switch between light and dark themes
+- View the optimal layout for the interface depending on their device's screen size
 
-## Running unit tests
+### Screenshot
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![](./imagelight.jpg)
+![](./imagedark.jpg)
 
-## Running end-to-end tests
+### Links
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Solution URL: [Add solution URL here](https://github.com/aknagirm/ng-dictionary-web)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-## Further help
+## My process
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Angular 14
+- Free dictionary API used from [Free Dictionary API](https://dictionaryapi.dev/)
+
+### What I enjoyed most
+
+Managing the dual theme, without material felt little exciting. In this approach, I loaded two css variable theme files <b>src\app\themes\css_darkTheme.css</b> & <b>src\app\themes\css_lightTheme.css</b> at the build time of the application. Once the build is completed These two files injected to the html as stylesheet. These files contain variables with same name but different color values, which supposed to be set as :root variables. Once that is done, the <b>src\app\components\slider\slider.component.ts</b> changing any one stylesheet to diasable as selected by the user using the slider.
+
+## Author
+
+- linkedin - [@mriganka-sekhar-sarkar-974814a2](linkedin.com/in/mriganka-sekhar-sarkar-974814a2)
