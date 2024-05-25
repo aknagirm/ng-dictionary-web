@@ -55,5 +55,6 @@ Managing the dual theme, without material felt little exciting. In this approach
 
 ## Author
 
-- Name: Mriganka Sekhar Sarkar
-- linkedin - [@mriganka-sekhar-sarkar-974814a2](linkedin.com/in/mriganka-sekhar-sarkar-974814a2)
+- Name: **Mriganka Sekhar Sarkar**
+- github - [github-aknagirm](https://github.com/aknagirm)
+- linkedin - [mriganka-sekhar-sarkar-974814a2](https://www.linkedin.com/in/mriganka-sekhar-sarkar-974814a2)
